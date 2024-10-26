@@ -2,7 +2,7 @@
 import { signIn } from "next-auth/react"
 import { useSearchParams } from "next/navigation"
 
-export default function loginForm() {
+export default function LoginForm() {
     const searchParams = useSearchParams()
 
     const error = searchParams.get('error')
