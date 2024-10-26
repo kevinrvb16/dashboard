@@ -1,6 +1,6 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials"
-
+import { User } from "next-auth"
 const handler = NextAuth({
     pages: {
         signIn: "/"
@@ -12,7 +12,7 @@ const handler = NextAuth({
             email: { label: "Email", type: "email" },
             password: {  label: "Password", type: "password" }
           },
-          async authorize(credentials) {
+          async authorize (credentials: Record<"email" | "password", string> | undefined): Promise<User | null> {
             if(!credentials) {
                 return null
             }
@@ -21,8 +21,9 @@ const handler = NextAuth({
                     id: "1",
                     name: "kevin",
                     email: "kevin@gmail.com"
-                }
+                } as User
             }
+            return null
           }
         })
       ]
