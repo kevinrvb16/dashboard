@@ -1,8 +1,7 @@
 import Link from 'next/link';
-import { signOut } from "next-auth/react";
 import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
-import { Home, LogOut, Package, PanelBottom, Settings2, ShoppingBag, Users } from 'lucide-react';
+import { Home, Package, PanelBottom, Settings2, ShoppingBag, Users } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
 import LogoutButton from './LogoutButton';
 
